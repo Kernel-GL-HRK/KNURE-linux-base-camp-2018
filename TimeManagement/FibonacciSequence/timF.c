@@ -10,10 +10,11 @@ MODULE_AUTHOR("Aleksandr Mordyk");
 MODULE_DESCRIPTION("Home-work lesson 7 (fibonacci)");
 MODULE_VERSION("0.1");
 
-static long fibon = 0; //counter for fibonacci
+static long fibon = 0; //counter for fibonacci;
 /*
-@Description - function to calculating Fibonacci numbers
-@param - number of Fibonacci
+@Description - function to calculating Fibonacci numbers;
+@param - number;
+@return - number of Fibonacci;
 */
 int fibonacci(int N)  
 {
