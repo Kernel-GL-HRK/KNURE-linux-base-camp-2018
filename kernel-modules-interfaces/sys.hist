@@ -1,0 +1,74 @@
+$ lsmod
+Module                  Size  Used by
+
+$ sudo insmod xxx.ko
+Password:
+
+$ lsmod
+Module                  Size  Used by
+xxx                    16384  0
+
+$ ls -la /sys/class/x-class/xxx
+-rw-r--r--    1 root     root          4096 Jul 26 19:09 /sys/class/x-class/xxx
+
+$ cat /sys/class/x-class/xxx
+Hello from module!
+
+$ cat /sys/class/x-class/xxx
+Hello from module!
+
+$ dmesg | tail -5
+[   77.121540] scp (1086) used greatest stack depth: 5868 bytes left
+[  111.730551] xxx: loading out-of-tree module taints kernel.
+[  111.745889] 'xxx' module initialized
+[  430.626804] read 19
+[  433.337544] read 19
+
+$ echo 'qwe' > /sys/class/x-class/xxx
+-bash: /sys/class/x-class/xxx: Permission denied
+
+$ echo 'qwe' | sudo tee /sys/class/x-class/xxx
+Password:
+qwe
+
+$ dmesg | tail -5
+[  111.730551] xxx: loading out-of-tree module taints kernel.
+[  111.745889] 'xxx' module initialized
+[  430.626804] read 19
+[  433.337544] read 19
+[  474.253470] write 4
+
+$ cat /sys/class/x-class/xxx
+qwe
+
+
+
+
+$ sudo insmod xxe.ko
+
+$ cat /sys/class/x-class/xxx
+cat: read error: Input/output error
+
+$ echo 'qwe' | sudo tee /sys/class/x-class/xxx
+qwe
+tee: /sys/class/x-class/xxx: I/O error
+
+
+
+
+$ sudo insmod xxm.ko
+
+$ echo 'qwe' | sudo tee /sys/class/x-class/data1
+qwe
+
+$ echo 'data2' | sudo tee /sys/class/x-class/data2
+data2
+
+$ cat /sys/class/x-class/data1
+qwe
+
+$ cat /sys/class/x-class/data2
+data2
+
+$ cat /sys/class/x-class/data3
+не инициализировано data3

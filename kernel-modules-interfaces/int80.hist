@@ -1,0 +1,20 @@
+$ ./mplib
+getpid return : 1102
+string for write length = 54
+эталонная строка для вывода!
+write return : 54
+mknod error : Operation not permitted
+
+$ ./mpsys
+getpid return : 1103
+string for write length = 54
+эталонная строка для вывода!
+write return : 54
+mknod return : -1
+
+$ ./mp
+getpid return : 1104
+string for write length = 54
+эталонная строка для вывода!
+write return : 54
+mknod return : -1
