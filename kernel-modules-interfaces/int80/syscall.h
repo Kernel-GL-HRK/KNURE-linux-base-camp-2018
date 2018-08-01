@@ -11,7 +11,8 @@ int write_call( int fd, const char* str, int len ) {
 }
 
 void do_write( void ) {
-   char *str = "=== эталонная строка для вывода!\n";
+   //char *str = "=== эталонная строка для вывода!\n";
+   char *str = "=== qq!\n";
    int len = strlen( str ) + 1, n;
    printk( "=== string for write length = %d\n", len );
    n = write_call( 1, str, len );

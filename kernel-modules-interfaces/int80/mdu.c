@@ -10,3 +10,4 @@ static int __init x80_init( void ) {
 module_init( x80_init );
 
 MODULE_LICENSE( "GPL" );
+MODULE_AUTHOR("Vlad Frolov <frolvlad@gmail.com>");

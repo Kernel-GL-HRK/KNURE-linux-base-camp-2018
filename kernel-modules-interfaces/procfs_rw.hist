@@ -1,0 +1,42 @@
+$ sudo insmod procfs_rw.ko
+
+$ lsmod
+Module                  Size  Used by
+procfs_rw              16384  0
+
+$ dmesg | tail -4
+[  783.425612] read 4
+[  784.450541] read 6
+[  786.827590] read 44
+[  835.883752] example_module loaded
+
+$ cat /proc/ex
+example/     execdomains
+
+$ cat /proc/example/buffer
+
+$ echo 'qwe' | sudo tee /proc/example/buffer
+qwe
+
+$ cat /proc/example/buffer
+qwe
+
+$ dmesg | tail -5
+[  871.456152] example_module read 0 chars
+[  881.801063] example_module written 4 chars
+[  894.943617] example_module read 4 chars
+[  894.946833] example_module read 0 chars
+[  894.948432] example_module read 0 chars
+
+$ echo '123456789012345' | sudo tee /proc/example/buffer
+123456789012345
+
+$ dmesg | tail -5
+[  894.943617] example_module read 4 chars
+[  894.946833] example_module read 0 chars
+[  894.948432] example_module read 0 chars
+[  929.956203] example_module reduse message length from 16 to 10 chars
+[  929.956354] example_module written 10 chars
+
+$ cat /proc/example/buffer
+1234567890$

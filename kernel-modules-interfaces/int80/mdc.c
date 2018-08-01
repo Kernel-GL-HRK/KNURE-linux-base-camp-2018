@@ -3,7 +3,7 @@
 
 static int __init x80_init( void ) {
    mm_segment_t fs = get_fs();
-   set_fs( get_ds() );
+   //set_fs( get_ds() );
    do_write();
    do_mknod();
    do_getpid();
@@ -14,3 +14,4 @@ static int __init x80_init( void ) {
 module_init( x80_init );
 
 MODULE_LICENSE( "GPL" );
+MODULE_AUTHOR("Vlad Frolov <frolvlad@gmail.com>");

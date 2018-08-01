@@ -7,7 +7,7 @@
 #include <linux/slab.h>
 
 MODULE_LICENSE("Dual BSD/GPL");
-MODULE_AUTHOR("Aleksandr Bulyshchenko <A.Bulyshchenko@globallogic.com>");
+MODULE_AUTHOR("Vlad Frolov <frolvlad@gmail.com>");
 MODULE_DESCRIPTION("Example for procfs read/write");
 MODULE_VERSION("0.1");
 
@@ -91,7 +91,7 @@ static int example_read(struct file *file_p, char __user *buffer, size_t length,
     if (length > (proc_msg_length - proc_msg_read_pos))
         length = (proc_msg_length - proc_msg_read_pos);
 
-    left = copy_to_user(buffer, &proc_buffer[proc_msg_read_pos], length);
+    left = raw_copy_to_user(buffer, &proc_buffer[proc_msg_read_pos], length);
 
     proc_msg_read_pos += length - left;
 
@@ -117,7 +117,7 @@ static int example_write(struct file *file_p, const char __user *buffer, size_t 
     else
         msg_length = length;
 
-    left = copy_from_user(proc_buffer, buffer, msg_length);
+    left = raw_copy_from_user(proc_buffer, buffer, msg_length);
 
     proc_msg_length = msg_length - left;
     proc_msg_read_pos = 0;

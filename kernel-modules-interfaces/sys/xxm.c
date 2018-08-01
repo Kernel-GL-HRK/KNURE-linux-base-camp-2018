@@ -83,4 +83,4 @@ void x_cleanup(void) {
 module_init( x_init );
 module_exit( x_cleanup );
 MODULE_LICENSE( "GPL" );
-
+MODULE_AUTHOR("Vlad Frolov <frolvlad@gmail.com>");
