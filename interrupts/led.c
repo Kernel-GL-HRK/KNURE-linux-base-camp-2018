@@ -2,12 +2,17 @@
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/gpio.h>
+
 #include <linux/kthread.h>
 #include <linux/sched.h>
 #include <linux/interrupt.h>
 #include <linux/delay.h>
+
 #include <linux/errno.h>
 #include <asm-generic/errno.h>
+#include <linux/err.h>
+
+#include <linux/string.h>
 
 #define DEVICE_NAME	"phenn_led"
 #define CLASS_NAME "led"
@@ -16,22 +21,24 @@ static unsigned int gpio_led_num = 15;
 static unsigned int gpio_but_num = 355;
 static unsigned int irq_num;
 static short led_on = 0;
-
-//static struct task_struct *blink_thread;
+static unsigned int irq_count = 0;
+static char count_buf[10];
 
 static int gpio_led_init( void );
 static int gpio_but_init( void );
 
-/*static int blink_func(void* data) {
-	while (!kthread_should_stop()) {
-		led_on = !led_on;
-		gpio_set_value(gpio_led_num, led_on);
-		msleep(500);
-	}
-	return 0;
-}*/
+static ssize_t count_show(struct class * class, struct class_attribute * attr, char* buf) {
+	sprintf(count_buf, "%d", irq_count);
+	strcpy(buf, count_buf);
+	printk("%s interrupts occured", count_buf);
+	return strlen( count_buf );
+}
+
+CLASS_ATTR_RO(count);
+static struct class * led_class;
 
 static irq_handler_t but_handler(int irq, void* dev_id) {
+	++irq_count;
 	led_on = !led_on;
 	gpio_set_value(gpio_led_num, led_on);
 	return IRQ_HANDLED;
@@ -60,7 +67,7 @@ static int gpio_led_init( void ) {
 	err = gpio_export(gpio_led_num, led_on);
 	if (err < 0) {
 		printk(KERN_ALERT "Led: cannot export gpio number");
-		goto fail;	
+		goto fail;
 	}
 	printk(KERN_INFO "Led: device valid");
 
@@ -94,7 +101,7 @@ static int gpio_but_init( void ) {
 		printk(KERN_ALERT "Button: cannot export gpio number");
 		goto fail;
 	}
-	
+
 	printk(KERN_INFO "Button: device valid");
 
 	return 0;
@@ -106,7 +113,7 @@ static int __init led_init( void ) {
 	int err = 0;
 
 	printk(KERN_INFO "Init module...");
-	
+
 	led_on = 1;
 
 	err = gpio_led_init();
@@ -120,49 +127,45 @@ static int __init led_init( void ) {
 		printk(KERN_ALERT "Button: init failed. Stop.");
 		return err;
 	}
-	
+
 	irq_num = gpio_to_irq(gpio_but_num);
 	printk (KERN_INFO "Button: irq number is %d", irq_num);
 
 	err = request_irq(irq_num,
 					  (irq_handler_t)but_handler,
 					  IRQF_TRIGGER_RISING,
-					  "button_handler", 
+					  "button_handler",
 					  NULL);
 
 	if (err != 0) {
 		printk(KERN_ALERT "Button: cannot request irq, errno=%d", err);
 		return err;
 	}
-	/*blink_thread = kthread_run(blink_func, NULL, "led_blink");
-	if (!blink_thread) {
-		printk(KERN_ALERT "Led: thread wasn't created");
-		return -EINVAL;
+
+	led_class = class_create(THIS_MODULE, "led_class");
+	if ( IS_ERR( led_class ) ) printk(KERN_ALERT "bad class create");
+	printk(KERN_INFO "Sysfs: class created");
+
+	err = class_create_file(led_class, &class_attr_count);
+	if (err < 0) {
+		printk(KERN_ALERT "Sysfs: cannot create file");
+		return err;
 	}
-	printk(KERN_INFO "Led: thread created");
-	*/
+	printk(KERN_INFO "Sysfs: file created");
+
 	printk(KERN_INFO "Led: module initialized successfully");
 	return err;
 }
 
 static void __exit led_exit( void ) {
-	/*int err = 0;
-
-	if (blink_thread) {
-		err = kthread_stop(blink_thread);
-		blink_thread = NULL;
-		if (err < 0) {
-			printk(KERN_INFO "Led: thread wasn't created");
-		}
-	}*/
-
 	gpio_unexport(gpio_but_num);
 	gpio_free(gpio_but_num);
 	free_irq(irq_num, NULL);
 	gpio_set_value(gpio_led_num, 0);
 	gpio_unexport(gpio_led_num);
 	gpio_free(gpio_led_num);
-	
+	class_remove_file(led_class, &class_attr_count);
+	class_destroy(led_class);
 	printk(KERN_INFO "Module removed");
 }
 
