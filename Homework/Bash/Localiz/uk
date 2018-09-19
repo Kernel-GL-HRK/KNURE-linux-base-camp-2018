@@ -1,0 +1,12 @@
+#English localization file
+#Key : Value
+
+
+#--Error message
+#---------------------------
+abs_param : Параметри відсутні
+n_notInt  : -n не є числом
+n_smalTh1 : Значення -n меньше або дорівнює 1
+unknown   : Невідомий параметер
+pathNoCor : Шлях не вірний
+OK        : Успышно завершено

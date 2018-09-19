@@ -1,0 +1,746 @@
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.4.112 (root@mgo-notebook) (gcc version 4.6.3 20120201 (prerelease) (crosstool-NG linaro-1.13.1-2012.02-20120222 - Linaro GCC 2012.02) ) #1 SMP PREEMPT Thu Aug 2 08:00:56 EEST 2018
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: sun8i
+[    0.000000] Ignoring tag cmdline (using the default kernel command line)
+[    0.000000] bootconsole [earlycon0] enabled
+[    0.000000] cma: CMA: reserved 160 MiB at 56000000
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] On node 0 totalpages: 131072
+[    0.000000] free_area_init_node: node 0, pgdat c0d48d80, node_mem_map c0e26000
+[    0.000000]   Normal zone: 1152 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 129920 pages, LIFO batch:31
+[    0.000000] script_init enter!
+[    0.000000] script_init exit!
+[    0.000000] PERCPU: Embedded 8 pages/cpu @c12b8000 s11904 r8192 d12672 u32768
+[    0.000000] pcpu-alloc: s11904 r8192 d12672 u32768 alloc=8*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 129920
+[    0.000000] Kernel command line: earlyprintk=ttyS0,115200 loglevel=8 initcall_debug=0 console=ttyS0,115200 console=tty0 init=/init
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] allocated 1048576 bytes of page_cgroup
+[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.000000] Memory: 512MB = 512MB total
+[    0.000000] Memory: 339148k/339148k available, 185140k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xe0800000 - 0xff000000   ( 488 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xe0000000   ( 512 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc09ac288   (9873 kB)
+[    0.000000]       .init : 0xc09ad000 - 0xc0ccce80   (3200 kB)
+[    0.000000]       .data : 0xc0cce000 - 0xc0d4b7f8   ( 502 kB)
+[    0.000000]        .bss : 0xc0d4bfac - 0xc0e25a00   ( 871 kB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	Additional per-CPU info printed with stalls.
+[    0.000000] NR_IRQS:544
+[    0.000000] Architected local timer running at 24.00MHz.
+[    0.000000] Switching to timer-based delay loop
+[    0.000000] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 178956ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000000] console [tty0] enabled, bootconsole disabled
+[    0.019903] Calibrating delay loop (skipped), value calculated using timer frequency.. 4800.00 BogoMIPS (lpj=24000000)
+[    0.019957] pid_max: default: 32768 minimum: 301
+[    0.020228] Mount-cache hash table entries: 512
+[    0.021066] Initializing cgroup subsys cpuacct
+[    0.021095] Initializing cgroup subsys memory
+[    0.021149] Initializing cgroup subsys devices
+[    0.021174] Initializing cgroup subsys freezer
+[    0.021197] Initializing cgroup subsys blkio
+[    0.021230] Initializing cgroup subsys perf_event
+[    0.021293] CPU: Testing write buffer coherency: ok
+[    0.021357] ftrace: allocating 26612 entries in 79 pages
+[    0.050264] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.050297] [sunxi_smp_prepare_cpus] enter
+[    0.050340] Setting up static identity map for 0x406f07c8 - 0x406f0820
+[    0.051177] CPU1: Booted secondary processor
+[    0.051177] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.051310] CPU2: Booted secondary processor
+[    0.051310] CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+[    0.051310] CPU3: Booted secondary processor
+[    0.051310] CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+[    0.060170] Brought up 4 CPUs
+[    0.060251] SMP: Total of 4 processors activated (19200.00 BogoMIPS).
+[    0.060878] devtmpfs: initialized
+[    0.063214] wakeup src cnt is : 1. 
+[    0.063233] [exstandby]leave extended_standby_enable_wakeup_src : event 0x800000
+[    0.063256] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_map 0x0
+[    0.063285] [exstandby]leave extended_standby_enable_wakeup_src : wakeup_gpio_group 0x40
+[    0.063313] sunxi pm init
+[    0.063443] pinctrl core: initialized pinctrl subsystem
+[    0.070895] NET: Registered protocol family 16
+[    0.071524] DMA: preallocated 2048 KiB pool for atomic coherent allocations
+[    0.071524] script_sysfs_init success
+[    0.071524] sunxi_dump_init success
+[    0.072154] gpiochip_add: registered GPIOs 0 to 383 on device: sunxi-pinctrl
+[    0.072154] sunxi-pinctrl sunxi-pinctrl: initialized sunXi PIO driver
+[    0.072154] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.072154] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.072154] script config pll_video to 297 Mhz
+[    0.072154] script config pll_de to 864 Mhz
+[    0.072154] script config pll_ve to 402 Mhz
+[    0.072154] sunxi_default_clk_init
+[    0.072154] try to set pll6ahb1 to 200000000
+[    0.072154] try to set ahb clk source to pll6ahb1
+[    0.072154] set ahb clk source to pll6ahb1
+[    0.072154] try to set ahb1 to 200000000
+[    0.072154] try to set apb1 to 100000000
+[    0.080218] bio: create slab <bio-0> at 0
+[    0.080332] [ARISC] :sunxi-arisc driver v1.04
+[    0.091598] [ARISC] :arisc version: [v0.1.58]
+[    0.165757] [ARISC] :sunxi-arisc driver v1.04 startup succeeded
+[    0.170394] SCSI subsystem initialized
+[    0.170590] usbcore: registered new interface driver usbfs
+[    0.170673] usbcore: registered new interface driver hub
+[    0.170717] usbcore: registered new device driver usb
+[    0.170717] twi_chan_cfg()340 - [twi0] has no twi_regulator.
+[    0.170717] twi_chan_cfg()340 - [twi1] has no twi_regulator.
+[    0.170717] twi_chan_cfg()340 - [twi2] has no twi_regulator.
+[    0.170717] Linux video capture interface: v2.00
+[    0.170738] Advanced Linux Sound Architecture Driver Version 1.0.25.
+[    0.171213] Bluetooth: Core ver 2.16
+[    0.171261] NET: Registered protocol family 31
+[    0.171280] Bluetooth: HCI device and connection manager initialized
+[    0.171304] Bluetooth: HCI socket layer initialized
+[    0.171324] Bluetooth: L2CAP socket layer initialized
+[    0.171364] Bluetooth: SCO socket layer initialized
+[    0.171582] cfg80211: Calling CRDA to update world regulatory domain
+[    0.171653] Switching to clocksource arch_sys_counter
+[    0.182236] FS-Cache: Loaded
+[    0.182515] CacheFiles: Loaded
+[    0.192545] NET: Registered protocol family 2
+[    0.202006] IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.202509] TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+[    0.202753] TCP bind hash table entries: 16384 (order: 5, 196608 bytes)
+[    0.202970] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.202994] TCP: reno registered
+[    0.203014] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.203050] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.203327] NET: Registered protocol family 1
+[    0.203671] RPC: Registered named UNIX socket transport module.
+[    0.203698] RPC: Registered udp transport module.
+[    0.203716] RPC: Registered tcp transport module.
+[    0.203734] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.340817] hw perfevents: enabled with ARMv7 Cortex_A7 PMU driver, 5 counters available
+[    0.340963] sunxi_reg_init enter
+[    0.341716] audit: initializing netlink socket (disabled)
+[    0.341772] type=2000 audit(0.340:1): initialized
+[    0.343369] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.343475] NFS: Registering the id_resolver key type
+[    0.343828] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+[    0.344496] NTFS driver 2.1.30 [Flags: R/W].
+[    0.344620] fuse init (API version 7.18)
+[    0.345314] Btrfs loaded
+[    0.345346] msgmni has been set to 982
+[    0.346309] io scheduler noop registered
+[    0.346333] io scheduler deadline registered
+[    0.346422] io scheduler cfq registered (default)
+[    0.346838] [DISP]disp_module_init
+[    0.347101] cmdline,init_disp=
+[    0.347137] cmdline,disp=
+[    0.353410] [DISP] Fb_map_kernel_logo,line:932:Fb_map_kernel_logo failed!
+[    0.366161] Console: switching to colour frame buffer device 160x45
+[    0.379847] [DISP]disp_module_init finish
+[    0.380158] sw_uart_get_devinfo()1503 - uart0 has no uart_regulator.
+[    0.380573] uart0: ttyS0 at MMIO 0x1c28000 (irq = 32) is a SUNXI
+[    0.380718] sw_uart_pm()890 - uart0 clk is already enable
+[    0.380849] sw_console_setup()1233 - console setup baud 115200 parity n bits 8, flow n
+[    0.572852] console [ttyS0] enabled
+[    1.163234] sunxi_cmatest_init enter
+[    1.315364] sunxi_cmatest_init success
+[    1.467803] loop: module loaded
+[    1.629192] sunxi_spi_chan_cfg()1376 - [spi-0] has no spi_regulator.
+[    1.749503] sunxi_spi_chan_cfg()1376 - [spi-1] has no spi_regulator.
+[    1.760365] tun: Universal TUN/TAP device driver, 1.6
+[    1.769780] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    1.781353] PPP generic driver version 2.4.2
+[    1.790122] PPP BSD Compression module registered
+[    1.799122] PPP Deflate Compression module registered
+[    1.810758] PPP MPPE Compression module registered
+[    1.819836] NET: Registered protocol family 24
+[    1.828503] PPTP driver version 0.8.5
+[    1.836443] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.867544] sunxi-ehci sunxi-ehci.1: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.880258] sunxi-ehci sunxi-ehci.1: new USB bus registered, assigned bus number 1
+[    1.893023] sunxi-ehci sunxi-ehci.1: irq 104, io mem 0xf1c1a000
+[    1.920033] sunxi-ehci sunxi-ehci.1: USB 0.0 started, EHCI 1.00
+[    1.931046] hub 1-0:1.0: USB hub found
+[    1.939031] hub 1-0:1.0: 1 port detected
+[    1.967452] sunxi-ehci sunxi-ehci.2: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.980168] sunxi-ehci sunxi-ehci.2: new USB bus registered, assigned bus number 2
+[    1.992808] sunxi-ehci sunxi-ehci.2: irq 106, io mem 0xf1c1b000
+[    2.020035] sunxi-ehci sunxi-ehci.2: USB 0.0 started, EHCI 1.00
+[    2.030819] hub 2-0:1.0: USB hub found
+[    2.038670] hub 2-0:1.0: 1 port detected
+[    2.067141] sunxi-ehci sunxi-ehci.3: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.079811] sunxi-ehci sunxi-ehci.3: new USB bus registered, assigned bus number 3
+[    2.092419] sunxi-ehci sunxi-ehci.3: irq 108, io mem 0xf1c1c000
+[    2.120034] sunxi-ehci sunxi-ehci.3: USB 0.0 started, EHCI 1.00
+[    2.130850] hub 3-0:1.0: USB hub found
+[    2.138768] hub 3-0:1.0: 1 port detected
+[    2.167248] sunxi-ehci sunxi-ehci.4: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.180086] sunxi-ehci sunxi-ehci.4: new USB bus registered, assigned bus number 4
+[    2.192831] sunxi-ehci sunxi-ehci.4: irq 110, io mem 0xf1c1d000
+[    2.220033] sunxi-ehci sunxi-ehci.4: USB 0.0 started, EHCI 1.00
+[    2.231073] hub 4-0:1.0: USB hub found
+[    2.239136] hub 4-0:1.0: 1 port detected
+[    2.247695] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.278483] sunxi-ohci sunxi-ohci.1: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    2.290925] sunxi-ohci sunxi-ohci.1: new USB bus registered, assigned bus number 5
+[    2.303256] sunxi-ohci sunxi-ohci.1: irq 105, io mem 0xf1c1a400
+[    2.374520] hub 5-0:1.0: USB hub found
+[    2.382502] hub 5-0:1.0: 1 port detected
+[    2.410894] sunxi-ohci sunxi-ohci.2: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    2.423268] sunxi-ohci sunxi-ohci.2: new USB bus registered, assigned bus number 6
+[    2.435607] sunxi-ohci sunxi-ohci.2: irq 107, io mem 0xf1c1b400
+[    2.504472] hub 6-0:1.0: USB hub found
+[    2.512500] hub 6-0:1.0: 1 port detected
+[    2.541029] sunxi-ohci sunxi-ohci.3: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    2.553525] sunxi-ohci sunxi-ohci.3: new USB bus registered, assigned bus number 7
+[    2.565920] sunxi-ohci sunxi-ohci.3: irq 109, io mem 0xf1c1c400
+[    2.634473] hub 7-0:1.0: USB hub found
+[    2.642559] hub 7-0:1.0: 1 port detected
+[    2.671096] sunxi-ohci sunxi-ohci.4: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    2.683617] sunxi-ohci sunxi-ohci.4: new USB bus registered, assigned bus number 8
+[    2.696063] sunxi-ohci sunxi-ohci.4: irq 111, io mem 0xf1c1d400
+[    2.764461] hub 8-0:1.0: USB hub found
+[    2.772588] hub 8-0:1.0: 1 port detected
+[    2.781103] Initializing USB Mass Storage driver...
+[    2.790570] usbcore: registered new interface driver usb-storage
+[    2.801129] USB Mass Storage support registered.
+[    2.810212] usbcore: registered new interface driver ums-alauda
+[    2.820766] usbcore: registered new interface driver ums-cypress
+[    2.831404] usbcore: registered new interface driver ums-datafab
+[    2.841933] usbcore: registered new interface driver ums_eneub6250
+[    2.852588] usbcore: registered new interface driver ums-freecom
+[    2.862998] usbcore: registered new interface driver ums-isd200
+[    2.873275] usbcore: registered new interface driver ums-jumpshot
+[    2.883733] usbcore: registered new interface driver ums-karma
+[    2.893848] usbcore: registered new interface driver ums-onetouch
+[    2.904152] usbcore: registered new interface driver ums-realtek
+[    2.914281] usbcore: registered new interface driver ums-sddr09
+[    2.924253] usbcore: registered new interface driver ums-sddr55
+[    2.934190] usbcore: registered new interface driver ums-usbat
+[    2.944024] usbcore: registered new interface driver usbserial
+[    2.953738] usbserial: USB Serial Driver core
+[    2.961776] usbcore: registered new interface driver option
+[    2.971165] USB Serial support registered for GSM modem (1-port)
+[    2.981688] file system registered
+[    2.990219] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    3.001299] android_usb gadget: Number of LUNs=3
+[    3.009691]  lun0: LUN: removable file: (no medium)
+[    3.018360]  lun1: LUN: removable file: (no medium)
+[    3.026914]  lun2: LUN: removable file: (no medium)
+[    3.035737] android_usb gadget: android_usb ready
+[    3.044239]  uinput result 0 , vmouse_init 
+[    3.052479] mousedev: PS/2 mouse device common for all mice
+[    3.062001] sunxikbd_init failed. 
+[    3.068787] ls_fetch_sysconfig_para: type err  device_used = 0. 
+[    3.078524] =========script_get_err============
+[    3.086599] ltr_init: ls_fetch_sysconfig_para err.
+[    3.095233] [RTC] WARNING: Rtc time will be wrong!!
+[    3.103731] [RTC] WARNING: use *internal OSC* as clock source
+[    3.113366] sunxi-rtc sunxi-rtc: rtc core: registered sunxi-rtc as rtc0
+[    3.123827] i2c /dev entries driver
+[    3.130977] IR RC5(x) protocol handler initialized
+[    3.139396] sunxi tsc version 0.1 
+[    3.146254] tscdev_init: tsc driver is disabled
+[    3.154383] sunxi cedar version 0.1 
+[    3.161353] [cedar]: install start!!!
+[    3.168530] [cedar]: install end!!!
+[    3.175302] sunxi_wdt_init_module: sunxi WatchDog Timer Driver v1.0
+[    3.185383] sunxi_wdt_probe: devm_ioremap return wdt_reg 0xf1c20ca0, res->start 0x01c20ca0, res->end 0x01c20cbf
+[    3.196721] sunxi_wdt_probe: initialized (g_timeout=16s, g_nowayout=0)
+[    3.210259] wdt_enable, write reg 0xf1c20cb8 val 0x00000000
+[    3.219548] timeout_to_interv, line 167
+[    3.226885] interv_to_timeout, line 189
+[    3.234237] wdt_set_tmout, write 0x000000b0 to mode reg 0xf1c20cb8, actual timeout 16 sec
+[    3.246944] device-mapper: ioctl: 4.22.0-ioctl (2011-10-19) initialised: dm-devel@redhat.com
+[    3.259777] Bluetooth: HCI UART driver ver 2.2
+[    3.268201] calibrat: max_cpufreq 1536Mhz Type 0!
+[    3.276924] [cpu_freq] ERR:get cpu extremity frequency from sysconfig failed, use max_freq
+[    3.290061] [mmc]: SD/MMC/SDIO Host Controller Driver(v1.111 2015-4-13 15:24) Compiled in Aug  2 2018 at 07:57:51
+[    3.305354] [mmc]: get mmc0's sdc_power is null!
+[    3.314388] [mmc]: get mmc1's sdc_power is null!
+[    3.323398] [mmc]: get mmc1's 2xmode ok, val = 1
+[    3.332431] [mmc]: get mmc1's ddrmode ok, val = 1
+[    3.341590] [mmc]: MMC host used card: 0x3, boot card: 0x0, io_card 2
+[    3.353727] [mmc]: sdc0 set ios: clk 0Hz bm OD pm OFF vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    3.371003] [mmc]: sdc1 set ios: clk 0Hz bm OD pm OFF vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    3.387708] sunxi_leds_fetch_sysconfig_para script_parser_fetch "leds_para" leds_used = -1063471340
+[    3.390693] [ARISC ERROR] :message process error
+[    3.390701] [ARISC ERROR] :message addr   : f004b840
+[    3.390708] [ARISC ERROR] :message state  : 5
+[    3.390713] [ARISC ERROR] :message attr   : 2
+[    3.390719] [ARISC ERROR] :message type   : 30
+[    3.390725] [ARISC ERROR] :message result : ff
+[    3.390730] [ARISC WARING] :callback not install
+[    3.390738] [cpu_freq] ERR:set cpu frequency to 1296MHz failed!
+[    3.475681] =========script_get_err============
+[    3.481466] [ARISC ERROR] :message process error
+[    3.481473] [ARISC ERROR] :message addr   : f004b840
+[    3.481479] [ARISC ERROR] :message state  : 5
+[    3.481484] [ARISC ERROR] :message attr   : 2
+[    3.481490] [ARISC ERROR] :message type   : 30
+[    3.481495] [ARISC ERROR] :message result : ff
+[    3.481500] [ARISC WARING] :callback not install
+[    3.481507] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.487366] [ARISC ERROR] :message process error
+[    3.487372] [ARISC ERROR] :message addr   : f004b840
+[    3.487378] [ARISC ERROR] :message state  : 5
+[    3.487383] [ARISC ERROR] :message attr   : 2
+[    3.487389] [ARISC ERROR] :message type   : 30
+[    3.487394] [ARISC ERROR] :message result : ff
+[    3.487400] [ARISC WARING] :callback not install
+[    3.487406] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.605659] [ARISC ERROR] :message process error
+[    3.605666] [ARISC ERROR] :message addr   : f004b840
+[    3.605673] [ARISC ERROR] :message state  : 5
+[    3.605678] [ARISC ERROR] :message attr   : 2
+[    3.605684] [ARISC ERROR] :message type   : 30
+[    3.605689] [ARISC ERROR] :message result : ff
+[    3.605694] [ARISC WARING] :callback not install
+[    3.605701] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.611449] [ARISC ERROR] :message process error
+[    3.611456] [ARISC ERROR] :message addr   : f004b840
+[    3.611462] [ARISC ERROR] :message state  : 5
+[    3.611467] [ARISC ERROR] :message attr   : 2
+[    3.611473] [ARISC ERROR] :message type   : 30
+[    3.611478] [ARISC ERROR] :message result : ff
+[    3.611483] [ARISC WARING] :callback not install
+[    3.611490] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.627798] usbcore: registered new interface driver usbhid
+[    3.765135] usbhid: USB HID core driver
+[    3.779081] [ARISC ERROR] :message process error
+[    3.786679] [ARISC ERROR] :message addr   : f004b840
+[    3.794503] [ARISC ERROR] :message state  : 5
+[    3.801629] [ARISC ERROR] :message attr   : 2
+[    3.808738] [ARISC ERROR] :message type   : 30
+[    3.815959] [ARISC ERROR] :message result : ff
+[    3.823207] [ARISC WARING] :callback not install
+[    3.830678] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.845451] [ARISC ERROR] :message process error
+[    3.852963] [ARISC ERROR] :message addr   : f004b840
+[    3.860809] [ARISC ERROR] :message state  : 5
+[    3.867918] [ARISC ERROR] :message attr   : 2
+[    3.875022] [ARISC ERROR] :message type   : 30
+[    3.882220] [ARISC ERROR] :message result : ff
+[    3.889415] [ARISC WARING] :callback not install
+[    3.896859] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.911784] [ARISC ERROR] :message process error
+[    3.919342] [ARISC ERROR] :message addr   : f004b840
+[    3.927243] [ARISC ERROR] :message state  : 5
+[    3.934399] [ARISC ERROR] :message attr   : 2
+[    3.941542] [ARISC ERROR] :message type   : 30
+[    3.948766] [ARISC ERROR] :message result : ff
+[    3.956013] [ARISC WARING] :callback not install
+[    3.963497] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    3.973378] asoc: sndcodec <-> sunxi-codec mapping ok
+[    3.985339] asoc: sndhdmi <-> sunxi-hdmiaudio.0 mapping ok
+[    3.994894] oprofile: using arm/armv7-ca7
+[    4.001955] u32 classifier
+[    4.007393]     Actions configured
+[    4.013644] Netfilter messages via NETLINK v0.30.
+[    4.021505] nf_conntrack version 0.5.0 (7859 buckets, 31436 max)
+[    4.031206] ctnetlink v0.93: registering with nfnetlink.
+[    4.039857] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    4.050512] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    4.060106] xt_time: kernel timezone is -0000
+[    4.067855] IPv4 over IPv4 tunneling driver
+[    4.075751] gre: GRE over IPv4 demultiplexor driver
+[    4.084031] ip_gre: GRE over IPv4 tunneling driver
+[    4.092843] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    4.101927] arp_tables: (C) 2002 David S. Miller
+[    4.110156] TCP: cubic registered
+[    4.116835] Initializing XFRM netlink socket
+[    4.124777] NET: Registered protocol family 10
+[    4.133768] Mobile IPv6
+[    4.139435] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    4.148601] IPv6 over IPv4 tunneling driver
+[    4.157279] NET: Registered protocol family 17
+[    4.165322] NET: Registered protocol family 15
+[    4.173475] Bluetooth: RFCOMM TTY layer initialized
+[    4.182023] Bluetooth: RFCOMM socket layer initialized
+[    4.190861] Bluetooth: RFCOMM ver 1.11
+[    4.198104] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    4.207104] Bluetooth: BNEP filters: protocol multicast
+[    4.215961] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    4.225759] L2TP core driver, V2.0
+[    4.232671] PPPoL2TP kernel driver, V2.0
+[    4.240182] L2TP IP encapsulation support (L2TPv3)
+[    4.248770] L2TP netlink interface
+[    4.255829] L2TP ethernet pseudowire support (L2TPv3)
+[    4.264718] Registering the dns_resolver key type
+[    4.273391] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    4.285262] ThumbEE CPU extension supported.
+[    4.293380] Registering SWP/SWPB emulation handler
+[    4.302987] cmdline,disp=
+[    4.309351] [HDMI] power vcc-hdmi-18
+[    4.315683] [ARISC ERROR] :message process error
+[    4.315692] [ARISC ERROR] :message addr   : f004b840
+[    4.315698] [ARISC ERROR] :message state  : 5
+[    4.315704] [ARISC ERROR] :message attr   : 2
+[    4.315710] [ARISC ERROR] :message type   : 30
+[    4.315715] [ARISC ERROR] :message result : ff
+[    4.315720] [ARISC WARING] :callback not install
+[    4.315728] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    4.355031] [mmc]: mmc 0 detect change, present 1
+[    4.424646] sunxi-rtc sunxi-rtc: setting system clock to 1970-01-01 00:00:12 UTC (12)
+[    4.430354] [ARISC ERROR] :message process error
+[    4.430361] [ARISC ERROR] :message addr   : f004b840
+[    4.430368] [ARISC ERROR] :message state  : 5
+[    4.430373] [ARISC ERROR] :message attr   : 2
+[    4.430379] [ARISC ERROR] :message type   : 30
+[    4.430385] [ARISC ERROR] :message result : ff
+[    4.430390] [ARISC WARING] :callback not install
+[    4.430397] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    4.503660] ths_fetch_sysconfig_para: type err  device_used = 1. 
+[    4.514801] CPU Budget:Register notifier
+[    4.522244] CPU Budget:register Success
+[    4.529516] sunxi-budget-cooling sunxi-budget-cooling: Cooling device registered: thermal-budget-0
+[    4.545480] [rf_pm]: module power0 name vcc-wifi-33
+[    4.548576] [ARISC ERROR] :message process error
+[    4.548584] [ARISC ERROR] :message addr   : f004b840
+[    4.548591] [ARISC ERROR] :message state  : 5
+[    4.548597] [ARISC ERROR] :message attr   : 2
+[    4.548602] [ARISC ERROR] :message type   : 30
+[    4.548608] [ARISC ERROR] :message result : ff
+[    4.548613] [ARISC WARING] :callback not install
+[    4.548621] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    4.620610] [rf_pm]: Did not config module_power1 in sys_config
+[    4.630312] [rf_pm]: Did not config module_power2 in sys_config
+[    4.639935] [rf_pm]: Did not config module_power3 in sys_config
+[    4.649490] [rf_pm]: mod has no chip_en gpio
+[    4.657197] [rf_pm]: failed to fetch lpo_use_apclk
+[    4.665479] [rf_pm]: regulator on.
+[    4.672188] [wifi_pm]: no wifi used in configuration
+[    4.680667] ALSA device list:
+[    4.686872]   #0: audiocodec
+[    4.692905]   #1: sndhdmi
+[    4.698667] Warning: unable to open an initial console.
+[    4.709954] Freeing init memory: 3196K
+[    4.850059] [mmc]: sdc0 set ios: clk 0Hz bm PP pm UP vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.864277] [mmc]: sdc0 power_supply is null
+[    4.890028] [mmc]: sdc0 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.923188] [mmc]: sdc0 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.938926] [mmc]: sdc0 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.957488] [mmc]: sdc0 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.970829] [mmc]: sdc0 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    4.986528] [mmc]: sdc0 set ios: clk 400000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    5.021513] [mmc]: sdc0 set ios: clk 25000000Hz bm PP pm ON vdd 3.3V width 1 timing LEGACY(SDR12) dt B
+[    5.036937] [mmc]: sdc0 set ios: clk 25000000Hz bm PP pm ON vdd 3.3V width 1 timing SD-HS(SDR25) dt B
+[    5.040048] [DISP] disp_device_attached_and_enable,line:159:attched ok, mgr0<-->device0, type=4, mode=4
+[    5.063806] [mmc]: sdc0 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 1 timing SD-HS(SDR25) dt B
+[    5.077251] [mmc]: sdc0 set ios: clk 50000000Hz bm PP pm ON vdd 3.3V width 4 timing SD-HS(SDR25) dt B
+[    5.090626] mmc0: new high speed SDHC card at address 59b4
+[    5.100321] mmcblk0: mmc0:59b4 SDU1  7.49 GiB 
+[    5.109461]  mmcblk0: p1 p2
+[    5.116458] *******************sd init ok*******************
+[    5.215629] [ARISC ERROR] :message process error
+[    5.224076] [ARISC ERROR] :message addr   : f004b840
+[    5.232845] [ARISC ERROR] :message state  : 5
+[    5.240859] [ARISC ERROR] :message attr   : 2
+[    5.248788] [ARISC ERROR] :message type   : 30
+[    5.256819] [ARISC ERROR] :message result : ff
+[    5.264724] [ARISC WARING] :callback not install
+[    5.272739] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    5.535773] [ARISC ERROR] :message process error
+[    5.543872] [ARISC ERROR] :message addr   : f004b840
+[    5.552366] [ARISC ERROR] :message state  : 5
+[    5.560187] [ARISC ERROR] :message attr   : 2
+[    5.568001] [ARISC ERROR] :message type   : 30
+[    5.575927] [ARISC ERROR] :message result : ff
+[    5.583829] [ARISC WARING] :callback not install
+[    5.591896] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    5.607140] [ARISC ERROR] :message process error
+[    5.615283] [ARISC ERROR] :message addr   : f004b840
+[    5.623845] [ARISC ERROR] :message state  : 5
+[    5.631688] [ARISC ERROR] :message attr   : 2
+[    5.639476] [ARISC ERROR] :message type   : 30
+[    5.647331] [ARISC ERROR] :message result : ff
+[    5.655140] [ARISC WARING] :callback not install
+[    5.663129] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    5.678498] [ARISC ERROR] :message process error
+[    5.686610] [ARISC ERROR] :message addr   : f004b840
+[    5.695071] [ARISC ERROR] :message state  : 5
+[    5.702797] [ARISC ERROR] :message attr   : 2
+[    5.710407] [ARISC ERROR] :message type   : 30
+[    5.718015] [ARISC ERROR] :message result : ff
+[    5.725519] [ARISC WARING] :callback not install
+[    5.733272] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    5.748468] [ARISC ERROR] :message process error
+[    5.756435] [ARISC ERROR] :message addr   : f004b840
+[    5.764809] [ARISC ERROR] :message state  : 5
+[    5.772516] [ARISC ERROR] :message attr   : 2
+[    5.780104] [ARISC ERROR] :message type   : 30
+[    5.787755] [ARISC ERROR] :message result : ff
+[    5.795292] [ARISC WARING] :callback not install
+[    5.802918] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    5.825800] [ARISC ERROR] :message process error
+[    5.833453] [ARISC ERROR] :message addr   : f004b840
+[    5.841449] [ARISC ERROR] :message state  : 5
+[    5.848718] [ARISC ERROR] :message attr   : 2
+[    5.855927] [ARISC ERROR] :message type   : 30
+[    5.863173] [ARISC ERROR] :message result : ff
+[    5.870398] [ARISC WARING] :callback not install
+[    5.877836] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    6.025777] [ARISC ERROR] :message process error
+[    6.033401] [ARISC ERROR] :message addr   : f004b840
+[    6.041404] [ARISC ERROR] :message state  : 5
+[    6.048678] [ARISC ERROR] :message attr   : 2
+[    6.055904] [ARISC ERROR] :message type   : 30
+[    6.063146] [ARISC ERROR] :message result : ff
+[    6.070378] [ARISC WARING] :callback not install
+[    6.077816] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    6.275761] [ARISC ERROR] :message process error
+[    6.283364] [ARISC ERROR] :message addr   : f004b840
+[    6.291364] [ARISC ERROR] :message state  : 5
+[    6.298633] [ARISC ERROR] :message attr   : 2
+[    6.305836] [ARISC ERROR] :message type   : 30
+[    6.313079] [ARISC ERROR] :message result : ff
+[    6.320301] [ARISC WARING] :callback not install
+[    6.327734] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    6.625786] [ARISC ERROR] :message process error
+[    6.633394] [ARISC ERROR] :message addr   : f004b840
+[    6.641387] [ARISC ERROR] :message state  : 5
+[    6.648653] [ARISC ERROR] :message attr   : 2
+[    6.655857] [ARISC ERROR] :message type   : 30
+[    6.663089] [ARISC ERROR] :message result : ff
+[    6.670315] [ARISC WARING] :callback not install
+[    6.677746] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    6.692578] [ARISC ERROR] :message process error
+[    6.700161] [ARISC ERROR] :message addr   : f004b840
+[    6.708141] [ARISC ERROR] :message state  : 5
+[    6.715416] [ARISC ERROR] :message attr   : 2
+[    6.722619] [ARISC ERROR] :message type   : 30
+[    6.729838] [ARISC ERROR] :message result : ff
+[    6.737053] [ARISC WARING] :callback not install
+[    6.744496] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    6.771249] [ARISC ERROR] :message process error
+[    6.778874] [ARISC ERROR] :message addr   : f004b840
+[    6.786865] [ARISC ERROR] :message state  : 5
+[    6.794141] [ARISC ERROR] :message attr   : 2
+[    6.801354] [ARISC ERROR] :message type   : 30
+[    6.808575] [ARISC ERROR] :message result : ff
+[    6.815787] [ARISC WARING] :callback not install
+[    6.823232] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.025776] [ARISC ERROR] :message process error
+[    7.033386] [ARISC ERROR] :message addr   : f004b840
+[    7.041374] [ARISC ERROR] :message state  : 5
+[    7.048637] [ARISC ERROR] :message attr   : 2
+[    7.055839] [ARISC ERROR] :message type   : 30
+[    7.063076] [ARISC ERROR] :message result : ff
+[    7.070290] [ARISC WARING] :callback not install
+[    7.077717] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.275762] [ARISC ERROR] :message process error
+[    7.283354] [ARISC ERROR] :message addr   : f004b840
+[    7.291341] [ARISC ERROR] :message state  : 5
+[    7.298602] [ARISC ERROR] :message attr   : 2
+[    7.305799] [ARISC ERROR] :message type   : 30
+[    7.313029] [ARISC ERROR] :message result : ff
+[    7.320242] [ARISC WARING] :callback not install
+[    7.327673] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.435755] [ARISC ERROR] :message process error
+[    7.443343] [ARISC ERROR] :message addr   : f004b840
+[    7.451331] [ARISC ERROR] :message state  : 5
+[    7.458595] [ARISC ERROR] :message attr   : 2
+[    7.465797] [ARISC ERROR] :message type   : 30
+[    7.473033] [ARISC ERROR] :message result : ff
+[    7.480252] [ARISC WARING] :callback not install
+[    7.487688] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.502368] [ARISC ERROR] :message process error
+[    7.509941] [ARISC ERROR] :message addr   : f004b840
+[    7.517926] [ARISC ERROR] :message state  : 5
+[    7.525197] [ARISC ERROR] :message attr   : 2
+[    7.532399] [ARISC ERROR] :message type   : 30
+[    7.539620] [ARISC ERROR] :message result : ff
+[    7.546840] [ARISC WARING] :callback not install
+[    7.554281] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.745777] [ARISC ERROR] :message process error
+[    7.753366] [ARISC ERROR] :message addr   : f004b840
+[    7.761356] [ARISC ERROR] :message state  : 5
+[    7.768630] [ARISC ERROR] :message attr   : 2
+[    7.775863] [ARISC ERROR] :message type   : 30
+[    7.783131] [ARISC ERROR] :message result : ff
+[    7.790396] [ARISC WARING] :callback not install
+[    7.797833] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.812558] [ARISC ERROR] :message process error
+[    7.820158] [ARISC ERROR] :message addr   : f004b840
+[    7.828136] [ARISC ERROR] :message state  : 5
+[    7.835412] [ARISC ERROR] :message attr   : 2
+[    7.842610] [ARISC ERROR] :message type   : 30
+[    7.849823] [ARISC ERROR] :message result : ff
+[    7.857037] [ARISC WARING] :callback not install
+[    7.864474] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.879318] [ARISC ERROR] :message process error
+[    7.886898] [ARISC ERROR] :message addr   : f004b840
+[    7.894882] [ARISC ERROR] :message state  : 5
+[    7.902151] [ARISC ERROR] :message attr   : 2
+[    7.909337] [ARISC ERROR] :message type   : 30
+[    7.916565] [ARISC ERROR] :message result : ff
+[    7.923776] [ARISC WARING] :callback not install
+[    7.931218] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    7.946059] [ARISC ERROR] :message process error
+[    7.953639] [ARISC ERROR] :message addr   : f004b840
+[    7.961622] [ARISC ERROR] :message state  : 5
+[    7.968881] [ARISC ERROR] :message attr   : 2
+[    7.976080] [ARISC ERROR] :message type   : 30
+[    7.983306] [ARISC ERROR] :message result : ff
+[    7.990524] [ARISC WARING] :callback not install
+[    7.997946] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.315644] [ARISC ERROR] :message process error
+[    8.323255] [ARISC ERROR] :message addr   : f004b840
+[    8.331243] [ARISC ERROR] :message state  : 5
+[    8.338503] [ARISC ERROR] :message attr   : 2
+[    8.345697] [ARISC ERROR] :message type   : 30
+[    8.352925] [ARISC ERROR] :message result : ff
+[    8.360150] [ARISC WARING] :callback not install
+[    8.367581] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.382408] [ARISC ERROR] :message process error
+[    8.389975] [ARISC ERROR] :message addr   : f004b840
+[    8.397956] [ARISC ERROR] :message state  : 5
+[    8.405224] [ARISC ERROR] :message attr   : 2
+[    8.412424] [ARISC ERROR] :message type   : 30
+[    8.419644] [ARISC ERROR] :message result : ff
+[    8.426856] [ARISC WARING] :callback not install
+[    8.434296] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.449121] [ARISC ERROR] :message process error
+[    8.456696] [ARISC ERROR] :message addr   : f004b840
+[    8.464674] [ARISC ERROR] :message state  : 5
+[    8.471938] [ARISC ERROR] :message attr   : 2
+[    8.479122] [ARISC ERROR] :message type   : 30
+[    8.486340] [ARISC ERROR] :message result : ff
+[    8.493550] [ARISC WARING] :callback not install
+[    8.500983] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.515680] [ARISC ERROR] :message process error
+[    8.523256] [ARISC ERROR] :message addr   : f004b840
+[    8.531241] [ARISC ERROR] :message state  : 5
+[    8.538500] [ARISC ERROR] :message attr   : 2
+[    8.545693] [ARISC ERROR] :message type   : 30
+[    8.552919] [ARISC ERROR] :message result : ff
+[    8.560131] [ARISC WARING] :callback not install
+[    8.567558] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.582393] [ARISC ERROR] :message process error
+[    8.589960] [ARISC ERROR] :message addr   : f004b840
+[    8.597939] [ARISC ERROR] :message state  : 5
+[    8.605203] [ARISC ERROR] :message attr   : 2
+[    8.612399] [ARISC ERROR] :message type   : 30
+[    8.619614] [ARISC ERROR] :message result : ff
+[    8.626824] [ARISC WARING] :callback not install
+[    8.634259] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.787891] [ARISC ERROR] :message process error
+[    8.795484] [ARISC ERROR] :message addr   : f004b840
+[    8.803525] [ARISC ERROR] :message state  : 5
+[    8.810926] [ARISC ERROR] :message attr   : 2
+[    8.818125] [ARISC ERROR] :message type   : 30
+[    8.825354] [ARISC ERROR] :message result : ff
+[    8.832580] [ARISC WARING] :callback not install
+[    8.840030] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.854875] [ARISC ERROR] :message process error
+[    8.862454] [ARISC ERROR] :message addr   : f004b840
+[    8.870439] [ARISC ERROR] :message state  : 5
+[    8.877699] [ARISC ERROR] :message attr   : 2
+[    8.884904] [ARISC ERROR] :message type   : 30
+[    8.892131] [ARISC ERROR] :message result : ff
+[    8.899333] [ARISC WARING] :callback not install
+[    8.906767] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.921602] [ARISC ERROR] :message process error
+[    8.929172] [ARISC ERROR] :message addr   : f004b840
+[    8.937154] [ARISC ERROR] :message state  : 5
+[    8.944424] [ARISC ERROR] :message attr   : 2
+[    8.951623] [ARISC ERROR] :message type   : 30
+[    8.958841] [ARISC ERROR] :message result : ff
+[    8.966053] [ARISC WARING] :callback not install
+[    8.973498] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    8.988354] [ARISC ERROR] :message process error
+[    8.995933] [ARISC ERROR] :message addr   : f004b840
+[    9.003917] [ARISC ERROR] :message state  : 5
+[    9.011209] [ARISC ERROR] :message attr   : 2
+[    9.018406] [ARISC ERROR] :message type   : 30
+[    9.025637] [ARISC ERROR] :message result : ff
+[    9.032856] [ARISC WARING] :callback not install
+[    9.040296] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.055144] [ARISC ERROR] :message process error
+[    9.062726] [ARISC ERROR] :message addr   : f004b840
+[    9.070713] [ARISC ERROR] :message state  : 5
+[    9.077975] [ARISC ERROR] :message attr   : 2
+[    9.085173] [ARISC ERROR] :message type   : 30
+[    9.092405] [ARISC ERROR] :message result : ff
+[    9.099614] [ARISC WARING] :callback not install
+[    9.107059] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.121610] [ARISC ERROR] :message process error
+[    9.129180] [ARISC ERROR] :message addr   : f004b840
+[    9.137167] [ARISC ERROR] :message state  : 5
+[    9.144444] [ARISC ERROR] :message attr   : 2
+[    9.151644] [ARISC ERROR] :message type   : 30
+[    9.158858] [ARISC ERROR] :message result : ff
+[    9.166064] [ARISC WARING] :callback not install
+[    9.173494] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.355794] [ARISC ERROR] :message process error
+[    9.363384] [ARISC ERROR] :message addr   : f004b840
+[    9.371363] [ARISC ERROR] :message state  : 5
+[    9.378613] [ARISC ERROR] :message attr   : 2
+[    9.385806] [ARISC ERROR] :message type   : 30
+[    9.393023] [ARISC ERROR] :message result : ff
+[    9.400234] [ARISC WARING] :callback not install
+[    9.407652] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.422471] [ARISC ERROR] :message process error
+[    9.430042] [ARISC ERROR] :message addr   : f004b840
+[    9.438007] [ARISC ERROR] :message state  : 5
+[    9.445259] [ARISC ERROR] :message attr   : 2
+[    9.452464] [ARISC ERROR] :message type   : 30
+[    9.459674] [ARISC ERROR] :message result : ff
+[    9.466877] [ARISC WARING] :callback not install
+[    9.474306] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.489137] [ARISC ERROR] :message process error
+[    9.496709] [ARISC ERROR] :message addr   : f004b840
+[    9.504687] [ARISC ERROR] :message state  : 5
+[    9.511952] [ARISC ERROR] :message attr   : 2
+[    9.519137] [ARISC ERROR] :message type   : 30
+[    9.526358] [ARISC ERROR] :message result : ff
+[    9.533567] [ARISC WARING] :callback not install
+[    9.540997] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.575787] [ARISC ERROR] :message process error
+[    9.583358] [ARISC ERROR] :message addr   : f004b840
+[    9.591332] [ARISC ERROR] :message state  : 5
+[    9.598581] [ARISC ERROR] :message attr   : 2
+[    9.605776] [ARISC ERROR] :message type   : 30
+[    9.612996] [ARISC ERROR] :message result : ff
+[    9.620205] [ARISC WARING] :callback not install
+[    9.627623] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.642453] [ARISC ERROR] :message process error
+[    9.650027] [ARISC ERROR] :message addr   : f004b840
+[    9.657990] [ARISC ERROR] :message state  : 5
+[    9.665250] [ARISC ERROR] :message attr   : 2
+[    9.672435] [ARISC ERROR] :message type   : 30
+[    9.679640] [ARISC ERROR] :message result : ff
+[    9.686844] [ARISC WARING] :callback not install
+[    9.694272] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[    9.708963] [ARISC ERROR] :message process error
+[    9.716536] [ARISC ERROR] :message addr   : f004b840
+[    9.724515] [ARISC ERROR] :message state  : 5
+[    9.731781] [ARISC ERROR] :message attr   : 2
+[    9.738964] [ARISC ERROR] :message type   : 30
+[    9.746187] [ARISC ERROR] :message result : ff
+[    9.753403] [ARISC WARING] :callback not install
+[    9.760837] [cpu_freq] ERR:set cpu frequency to 1536MHz failed!
+[   10.123857] systemd-udevd[108]: starting version 215
+[   11.250563] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[   12.382948] udevd[289]: starting version 175
+[   12.690382] vmouse_input_dev_open 
+[   12.850911] vmouse_input_dev_close 
+[   13.722696] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   13.972657] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[   16.677978] gmac0: probed
+[   16.678152] gmac0 gmac0: eth0: eth0: PHY ID 00441400 at 0 IRQ poll (gmac0-0:00)
+[   16.810521] init ip6-ip6: add_linklocal failed
+[   16.821798] ipv6: addrconf_gre_config(gre0)
+[   17.194453] vmouse_input_dev_open 
