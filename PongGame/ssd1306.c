@@ -430,7 +430,7 @@ int thread_function(void *data){
         ssd1306_clear(0);
 
 
-        drawCircle(change_y,change_y,5);
+        drawCircle(25,change_y,5);
 
 
         
@@ -440,11 +440,15 @@ int thread_function(void *data){
         if (line>=103)line=60;
         else if(line<=0)line=60;
 
-        if (GLOBAL_VARIABLE<0)flagLeftRight=0;
+        if (GLOBAL_VARIABLE<2048)flagLeftRight=0;
         else flagLeftRight=1;
 
-        Graphic_drawLine_(line, 63, line+lineSize, 63);
-        Graphic_drawLine_(line, 64, line+lineSize, 64);
+        Graphic_drawLine_(line, 52, line, 62);// |
+        Graphic_drawLine_(line, 62, line+lineSize, 62);// _
+        Graphic_drawLine_(line, 63, line+lineSize, 63);// _
+        Graphic_drawLine_(line+lineSize, 52, line+lineSize, 62);// |
+        
+
         ssd1306_UpdateScreen(lcd);
 
     

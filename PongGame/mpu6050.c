@@ -28,7 +28,38 @@ int GLOBAL_VARIABLE = 0;
 EXPORT_SYMBOL(GLOBAL_VARIABLE);
 
 
+
+
+long int angle_ax;
+long int gyroXangle;
+long int gyroYangle;
 static struct mpu6050_data g_mpu6050_data;
+
+
+
+
+static int FastArcTan32(int x) { // x multiple of 4096
+    return (512*x - (((x*(x - 4096)) >> 12)*(160 + ((43*x)>>12)))) >> 12;
+}
+
+#define ABS(x) (x>=0?x:-x)
+
+int atan2_32(int x, int y) {
+    int x_abs = ABS(x);
+    int y_abs = ABS(y);
+    int xmore = x_abs > y_abs;
+
+    if (x>=0 && y>=0) { // Quadrant 0-90
+        return xmore?FastArcTan32((y_abs << 12) / x_abs):1024-FastArcTan32((x_abs << 12) / y_abs);
+    } else if (x<0 && y>=0) { // Quadrant 90-180
+        return xmore?2048-FastArcTan32((y_abs << 12) / x_abs):1024+FastArcTan32((x_abs << 12) / y_abs);
+    } else if (x<0 && y<0) { // Quadrant 180-270
+        return xmore?2048+FastArcTan32((y_abs << 12) / x_abs):3072-FastArcTan32((x_abs << 12) / y_abs);
+    } else { // Quadrant 270-0
+        return xmore?4096-FastArcTan32((y_abs << 12) / x_abs):3072+FastArcTan32((x_abs << 12) / y_abs);
+    }
+}
+
 
     /*Read data*/
 static int mpu6050_read_data(void){
@@ -53,9 +84,21 @@ static int mpu6050_read_data(void){
     /*read data temperature*/
     temp = (s16)((u16)i2c_smbus_read_word_swapped(drv_client, REG_TEMP_OUT_H));
     g_mpu6050_data.temperature = (temp + 12420 + 170) / 340;
- 
+    
 
-    GLOBAL_VARIABLE= g_mpu6050_data.gyro_values[0];
+
+        long AccXangle;
+        long angleresX,angleresY;
+        angleresX=atan2_32((g_mpu6050_data.accel_values[1]),(g_mpu6050_data.accel_values[2]));
+        angleresY=atan2_32((g_mpu6050_data.accel_values[2]),(g_mpu6050_data.accel_values[1]));
+
+        dev_info(&drv_client->dev, "Angle X result:= %d\n",
+        angleresX);
+        dev_info(&drv_client->dev, "Angle Y result:= %d\n",
+        angleresY);
+
+
+       GLOBAL_VARIABLE= angleresX;
 
     /*print data accel, gyro, temperature  using dev_info*/
     dev_info(&drv_client->dev, "sensor data read:\n");
@@ -70,6 +113,7 @@ static int mpu6050_read_data(void){
     dev_info(&drv_client->dev, "TEMP = %d\n",
         g_mpu6050_data.temperature);
 
+
     return 0;
 }
 
@@ -80,7 +124,7 @@ int thread_function(void *data){
 
         mpu6050_read_data();
 
-        msleep(1500);
+        msleep(500);
         schedule();
     }
 
