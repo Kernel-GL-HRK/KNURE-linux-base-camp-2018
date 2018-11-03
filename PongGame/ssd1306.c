@@ -648,7 +648,7 @@ int thread_function(void *data){
                             new_x += ball_dir_x + ball_dir_x;
                             counter+=1;
                             }    
-                            
+
                             // Check if we hit the vertical walls
                             if(new_x <= 5 || new_x >= 122) {
                                 ball_dir_x = -ball_dir_x;
@@ -667,21 +667,32 @@ int thread_function(void *data){
 
                             fillCircle(new_x,new_y,5);
                             
-                            if (flagLeftRight)line+=6;
-                            else line-=6;
+                           // if (flagLeftRight)line+=6;
+                            //else line-=6;
 
-                            if (line>=103)line=60;
-                            else if(line<=0)line=60;
+                            switch (flagLeftRight){
+                                    case 1:
+                                        line+=6;
+                                        break;
+                                     case 2:
+                                        line-=6;
+                                        break;
+                             break;                  
+                             }   
 
-                            if (GLOBAL_VARIABLE<2048)flagLeftRight=0;
-                            else flagLeftRight=1;
+                            if (line>=103)line-=6;
+                            else if(line<=0)line+=6;
+
+                            if ((GLOBAL_VARIABLE>1500)&&(GLOBAL_VARIABLE<2500))flagLeftRight=0;
+                            else if (GLOBAL_VARIABLE<1500)flagLeftRight=1;
+                            else if (GLOBAL_VARIABLE>2500)flagLeftRight=2;
 
                             Graphic_drawLine_(line, 62, line+lineSize, 62);// 
                             Graphic_drawLine_(line, 63, line+lineSize, 63);//
                             
 
                             ssd1306_SetCursor(10,2);
-                            ssd1306_WriteString("Conter:",Font_7x10,SSD1306_COLOR_WHITE);
+                            ssd1306_WriteString("Counter:",Font_7x10,SSD1306_COLOR_WHITE);
 
                             ssd1306_SetCursor(80,2);
                             
@@ -693,8 +704,8 @@ int thread_function(void *data){
                             msleep(30);
                             schedule();
 
-        ball_x = new_x;
-        ball_y = new_y;
+                            ball_x = new_x;
+                            ball_y = new_y;
 
                 break;    
 

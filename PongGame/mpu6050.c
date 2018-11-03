@@ -92,7 +92,7 @@ static int mpu6050_read_data(void){
         angleresX=atan2_32((g_mpu6050_data.accel_values[1]),(g_mpu6050_data.accel_values[2]));
         angleresY=atan2_32((g_mpu6050_data.accel_values[2]),(g_mpu6050_data.accel_values[1]));
 
-        dev_info(&drv_client->dev, "Angle X result:= %d\n",
+        dev_info(&drv_client->dev, "Angle X result:====> %d\n",
         angleresX);
         dev_info(&drv_client->dev, "Angle Y result:= %d\n",
         angleresY);
