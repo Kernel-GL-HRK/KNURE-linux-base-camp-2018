@@ -617,6 +617,8 @@ int thread_function(void *data){
         switch (state){
 
             case PRINT_LOGO:
+
+
                             ssd1306_clear(0);
                             drawBitmap(32, 0,  GL, 64, 64, 1); //Print the GLlogo;
                             ssd1306_UpdateScreen(lcd);  
@@ -647,7 +649,9 @@ int thread_function(void *data){
                             ball_dir_x = -ball_dir_x;
                             new_x += ball_dir_x + ball_dir_x;
                             counter+=1;
-                            }    
+                            }
+
+                            else if (new_y >= 62) state=GAMEOVER;   
 
                             // Check if we hit the vertical walls
                             if(new_x <= 5 || new_x >= 122) {
@@ -660,7 +664,11 @@ int thread_function(void *data){
                                 ball_dir_y = -ball_dir_y;
                                 new_y += ball_dir_y + ball_dir_y;
                             }
-                            
+                         
+
+        
+
+
 
                             ssd1306_clear(0);
 
@@ -708,7 +716,17 @@ int thread_function(void *data){
                             ball_y = new_y;
 
                 break;    
+                case GAMEOVER:
 
+                            counter=0;    
+                            ssd1306_clear(0);
+                            ssd1306_SetCursor(20,30);
+                            ssd1306_WriteString("GAME OVER",Font_7x10,SSD1306_COLOR_WHITE);
+                            ssd1306_UpdateScreen(lcd); 
+                            msleep(2500);
+                            schedule();
+                            state=GAME;
+                break;
 
 
             break;
