@@ -61,6 +61,8 @@ int atan2_32(int x, int y) {
 }
 
 
+
+
     /*Read data*/
 static int mpu6050_read_data(void){
     
@@ -88,20 +90,26 @@ static int mpu6050_read_data(void){
 
 
         long AccXangle;
-        long angleresX,angleresY;
+        long angleresX;
+        static long resAngle=0;
         angleresX=atan2_32((g_mpu6050_data.accel_values[1]),(g_mpu6050_data.accel_values[2]));
-        angleresY=atan2_32((g_mpu6050_data.accel_values[2]),(g_mpu6050_data.accel_values[1]));
 
-        dev_info(&drv_client->dev, "Angle X result:====> %d\n",
+        dev_info(&drv_client->dev, "Angle X result: %d\n",
         angleresX);
-        dev_info(&drv_client->dev, "Angle Y result:= %d\n",
-        angleresY);
+        //filter
 
+        resAngle=resAngle*800+angleresX*200;
+        resAngle=resAngle/1000;
+        dev_info(&drv_client->dev, "Result: %d\n",
+        resAngle);
+        
+        //filter
+        GLOBAL_VARIABLE= angleresX;
 
-       GLOBAL_VARIABLE= angleresX;
+        //GLOBAL_VARIABLE=resAngle;
 
     /*print data accel, gyro, temperature  using dev_info*/
-    dev_info(&drv_client->dev, "sensor data read:\n");
+/*    dev_info(&drv_client->dev, "sensor data read:\n");
     dev_info(&drv_client->dev, "ACCEL[X,Y,Z] = [%d, %d, %d]\n",
         g_mpu6050_data.accel_values[0],
         g_mpu6050_data.accel_values[1],
@@ -112,7 +120,7 @@ static int mpu6050_read_data(void){
         g_mpu6050_data.gyro_values[2]);
     dev_info(&drv_client->dev, "TEMP = %d\n",
         g_mpu6050_data.temperature);
-
+*/
 
     return 0;
 }
@@ -124,7 +132,7 @@ int thread_function(void *data){
 
         mpu6050_read_data();
 
-        msleep(500);
+        msleep(100);
         schedule();
     }
 
