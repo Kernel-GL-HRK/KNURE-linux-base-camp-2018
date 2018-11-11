@@ -1,0 +1,207 @@
+U-Boot SPL 2017.11-armbian (Jan 25 2018 - 07:54:28)
+DRAM: 512 MiB
+Trying to boot from MMC1
+
+
+U-Boot 2017.11-armbian (Jan 25 2018 - 07:54:28 +0100) Allwinner Technology
+
+CPU:   Allwinner H3 (SUN8I 1680)
+Model: Xunlong Orange Pi One
+DRAM:  512 MiB
+MMC:   SUNXI SD/MMC: 0
+*** Warning - bad CRC, using default environment
+
+In:    serial                                                                   
+Out:   serial                                                                   
+Err:   serial                                                                   
+Net:   phy interface0                                                           
+eth0: ethernet@1c30000                                                          
+starting USB...                                                                 
+USB0:   USB EHCI 1.00                                                           
+USB1:   USB OHCI 1.0                                                            
+scanning bus 0 for devices... 1 USB Device(s) found                             
+       scanning usb for storage devices... 0 Storage Device(s) found            
+Autoboot in 1 seconds, press <Space> to stop                                    
+switch to partitions #0, OK                                                     
+mmc0 is current device                                                          
+Scanning mmc 0:1...                                                             
+Found U-Boot script /boot/boot.scr                                              
+3708 bytes read in 217 ms (16.6 KiB/s)                                          
+## Executing script at 43100000                                                 
+U-boot loaded from SD                                                           
+Boot script loaded from mmc                                                     
+201 bytes read in 175 ms (1000 Bytes/s)                                         
+5093718 bytes read in 486 ms (10 MiB/s)                                         
+6972808 bytes read in 623 ms (10.7 MiB/s)                                       
+Found mainline kernel configuration                                             
+32002 bytes read in 1407 ms (21.5 KiB/s)                                        
+4179 bytes read in 940 ms (3.9 KiB/s)                                           
+Applying kernel provided DT fixup script (sun8i-h3-fixup.scr)                   
+## Executing script at 44000000                                                 
+## Loading init Ramdisk from Legacy Image at 43300000 ...                       
+   Image Name:   uInitrd                                                        
+   Image Type:   ARM Linux RAMDisk Image (gzip compressed)                      
+   Data Size:    5093654 Bytes = 4.9 MiB                                        
+   Load Address: 00000000                                                       
+   Entry Point:  00000000                                                       
+   Verifying Checksum ... OK                                                    
+## Flattened Device Tree blob at 43000000                                       
+   Booting using the fdt blob at 0x43000000                                     
+   Loading Ramdisk to 49b24000, end 49fff916 ... OK                             
+   reserving fdt memory region: addr=43000000 size=6e000                        
+   Loading Device Tree to 49ab3000, end 49b23fff ... OK                         
+                                                                                
+Starting kernel ...                                                             
+                                                                                
+Loading, please wait...                                                         
+starting version 232                                                            
+Begin: Loading essential drivers ... done.                                      
+Begin: Running /scripts/init-premount ... done.                                 
+Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.
+Begin: Running /scripts/local-premount ... Scanning for Btrfs filesystems       
+done.                                                                           
+Begin: Will now check root file system ... fsck from util-linux 2.29.2          
+[/sbin/fsck.ext4 (1) -- /dev/mmcblk0p1] fsck.ext4 -a -C0 /dev/mmcblk0p1         
+/dev/mmcblk0p1: recovering journal                                              
+/dev/mmcblk0p1: clean, 37873/911904 files, 337139/3849616 blocks                
+done.                                                                           
+done.                                                                           
+Begin: Running /scripts/local-bottom ... done.                                  
+Begin: Running /scripts/init-bottom ... done.                                   
+                                                                                
+Welcome to Debian GNU/Linux 9 (stretch)!                                        
+                                                                                
+[  OK  ] Set up automount Arbitrary Executab��…rmats File System Automount Poin.
+[  OK  ] Listening on udev Control Socket.                                      
+[  OK  ] Listening on Journal Audit Socket.                                     
+[  OK  ] Reached target Remote File Systems.                                    
+[  OK  ] Created slice System Slice.                                            
+[  OK  ] Created slice system-serial\x2dgetty.slice.                            
+[  OK  ] Listening on Syslog Socket.                                            
+[  OK  ] Listening on fsck to fsckd communication Socket.                       
+[  OK  ] Listening on /dev/initctl Compatibility Named Pipe.                    
+[  OK  ] Reached target Swap.                                                   
+         Mounting Debug File System...                                          
+[  OK  ] Started Forward Password Requests to Wall Directory Watch.             
+[  OK  ] Listening on udev Kernel Socket.                                       
+         Mounting POSIX Message Queue File System...                            
+[  OK  ] Created slice User and Session Slice.                                  
+[  OK  ] Created slice system-getty.slice.                                      
+[  OK  ] Started Dispatch Password Requests to Console Directory Watch.         
+[  OK  ] Reached target Paths.                                                  
+[  OK  ] Reached target Encrypted Volumes.                                      
+[  OK  ] Reached target Slices.                                                 
+[  OK  ] Listening on Journal Socket (/dev/log).                                
+[  OK  ] Listening on Journal Socket.                                           
+         Starting Nameserver information manager...                             
+         Starting Load Kernel Modules...                                        
+         Starting Restore / save the current clock...                           
+         Starting Remount Root and Kernel File Systems...                       
+         Starting Set the console keyboard layout...                            
+         Starting Create list of required st��…ce nodes for the current kernel..
+[  OK  ] Mounted POSIX Message Queue File System.                               
+[  OK  ] Mounted Debug File System.                                             
+[  OK  ] Started Load Kernel Modules.                                           
+[  OK  ] Started Restore / save the current clock.                              
+[  OK  ] Started Remount Root and Kernel File Systems.                          
+[  OK  ] Started Set the console keyboard layout.                               
+[  OK  ] Started Create list of required sta��…vice nodes for the current kerne.
+[  OK  ] Started Nameserver information manager.                                
+         Starting Create Static Device Nodes in /dev...                         
+         Starting udev Coldplug all Devices...                                  
+         Starting Load/Save Random Seed...                                      
+         Mounting Configuration File System...                                  
+         Starting Apply Kernel Variables...                                     
+[  OK  ] Mounted Configuration File System.                                     
+[  OK  ] Started Load/Save Random Seed.                                         
+[  OK  ] Started Create Static Device Nodes in /dev.                            
+[  OK  ] Started Apply Kernel Variables.                                        
+[  OK  ] Reached target Local File Systems (Pre).                               
+         Mounting /tmp...                                                       
+         Starting udev Kernel Device Manager...                                 
+[  OK  ] Mounted /tmp.                                                          
+[  OK  ] Reached target Local File Systems.                                     
+         Starting Armbian enhanced Log2Ram...                                   
+         Starting Raise network interfaces...                                   
+         Starting Set console font and keymap...                                
+[  OK  ] Started udev Kernel Device Manager.                                    
+[  OK  ] Started Set console font and keymap.                                   
+[  OK  ] Started udev Coldplug all Devices.                                     
+[  OK  ] Found device /dev/ttyS0.                                               
+[  OK  ] Started Armbian enhanced Log2Ram.                                      
+         Starting Journal Service...                                            
+[  OK  ] Found device /sys/subsystem/net/devices/eth0.                          
+[  OK  ] Started Journal Service.                                               
+[  OK  ] Started Raise network interfaces.                                      
+[  OK  ] Reached target Sound Card.                                             
+         Starting Flush Journal to Persistent Storage...                        
+[  OK  ] Started ifup for eth0.                                                 
+[  OK  ] Started Flush Journal to Persistent Storage.                           
+         Starting Create Volatile Files and Directories...                      
+[  OK  ] Started Create Volatile Files and Directories.                         
+         Starting Update UTMP about System Boot/Shutdown...                     
+[  OK  ] Started Entropy daemon using the HAVEGE algorithm.                     
+[  OK  ] Reached target System Time Synchronized.                               
+[  OK  ] Started Update UTMP about System Boot/Shutdown.                        
+[  OK  ] Reached target System Initialization.                                  
+[  OK  ] Started Daily Cleanup of Temporary Directories.                        
+[  OK  ] Started Daily apt download activities.                                 
+[  OK  ] Listening on D-Bus System Message Bus Socket.                          
+[  OK  ] Reached target Sockets.                                                
+[  OK  ] Started Daily apt upgrade and clean activities.                        
+[  OK  ] Reached target Timers.                                                 
+[  OK  ] Reached target Basic System.                                           
+         Starting System Logging Service...                                     
+         Starting LSB: Start/stop sysstat's sadc...                             
+         Starting LSB: Load kernel modules needed to enable cpufreq scaling...  
+         Starting Save/Restore Sound Card State...                              
+         Starting Login Service...                                              
+[  OK  ] Started Regular background program processing daemon.                  
+         Starting LSB: Armbian gathering hardware information...                
+[  OK  ] Started D-Bus System Message Bus.                                      
+         Starting Network Manager...                                            
+[  OK  ] Started System Logging Service.                                        
+[  OK  ] Started Save/Restore Sound Card State.                                 
+[  OK  ] Started LSB: Start/stop sysstat's sadc.                                
+[  OK  ] Started Login Service.                                                 
+[  OK  ] Started LSB: Load kernel modules needed to enable cpufreq scaling.     
+         Starting LSB: set CPUFreq kernel parameters...                         
+[  OK  ] Started LSB: set CPUFreq kernel parameters.                            
+         Starting LSB: Set sysfs variables from /etc/sysfs.conf...              
+[  OK  ] Started LSB: Set sysfs variables from /etc/sysfs.conf.                 
+[  OK  ] Started Network Manager.                                               
+         Starting Network Manager Script Dispatcher Service...                  
+[  OK  ] Reached target Network.                                                
+[  OK  ] Started Unattended Upgrades Shutdown.                                  
+         Starting Permit User Sessions...                                       
+         Starting OpenBSD Secure Shell server...                                
+         Starting Network Manager Wait Online...                                
+[  OK  ] Started Permit User Sessions.                                          
+[  OK  ] Started Network Manager Script Dispatcher Service.                     
+         Starting Hostname Service...                                           
+[  OK  ] Started OpenBSD Secure Shell server.                                   
+[  OK  ] Started Hostname Service.                                              
+         Starting Authorization Manager...                                      
+[  OK  ] Started Network Manager Wait Online.                                   
+[  OK  ] Reached target Network is Online.                                      
+         Starting /etc/rc.local Compatibility...                                
+         Starting LSB: Advanced IEEE 802.11 management daemon...                
+         Starting LSB: Start NTP daemon...                                      
+         Starting LSB: disk temperature monitoring daemon...                    
+[  OK  ] Started /etc/rc.local Compatibility.                                   
+[  OK  ] Started LSB: Advanced IEEE 802.11 management daemon.                   
+[  OK  ] Started Authorization Manager.                                         
+[  OK  ] Started Serial Getty on ttyS0.                                         
+[  OK  ] Started Getty on tty1.                                                 
+[  OK  ] Reached target Login Prompts.                                          
+[  OK  ] Started LSB: disk temperature monitoring daemon.                       
+[  OK  ] Started LSB: Start NTP daemon.                                         
+[  OK  ] Started LSB: Armbian gathering hardware information.                   
+[  OK  ] Reached target Multi-User System.                                      
+[  OK  ] Reached target Graphical Interface.                                    
+         Starting Update UTMP about System Runlevel Changes...                  
+[  OK  ] Started Update UTMP about System Runlevel Changes.                     
+                                                                                
+Debian GNU/Linux 9 orangepione ttyS0                                            
+                                                                                
+orangepione login: 
